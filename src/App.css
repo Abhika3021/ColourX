@@ -1,0 +1,846 @@
+@import url('https://fonts.googleapis.com/css2?family=Laila:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+:root {
+  --sale: #F65B5B;
+  --black: #000000;
+  --gold: #F7DC5A;
+  --gold20: #FDF8DD;
+  --gold40: #FAF1BD;
+  --gray: #999999;
+  --dark-gray: #F4F4F4;
+  --blue: #5AB5F7;
+  --blue20: #DEF0FD;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+header {
+  /* background-color: var(--black); */
+  text-align: center;
+  font-family: 'Noto Serif Khitan Small Script', sans-serif;
+}
+
+header .container-fluid {
+  margin: 0;
+  padding: 0;
+}
+
+.container-fluid .laptop {
+  background-color: white;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.container-fluid .header-links-laptop {
+  text-align: center;
+  padding-top: 10px;
+  box-sizing: border-box;
+}
+
+.container-fluid .header-links-laptop a {
+  color: var(--black);
+  padding: 10px;
+  font-size: 22px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.container-fluid .laptop-logo {
+  margin-left: 30px;
+  padding-top: 10px;
+  display: flex;
+}
+
+.container-fluid .laptop-logo h2 {
+  /* color: white; */
+  margin-left: 22px;
+  padding-top: 10px;
+  font-family: 'Laila', sans-serif;
+}
+
+
+
+#benefits {
+  background-color: var(--gold40);
+}
+
+#benefitsInner {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 30px;
+}
+
+.benefitItem {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.benefitItem svg {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 800px) {
+  #benefitsInner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 18px;
+    row-gap: 4px;
+    padding: 6px 6px;
+    width: min-content;
+    overflow-y: auto;
+    max-width: 100vw;
+  }
+
+  .benefitItem {
+    font-weight: 700;
+    font-size: 8.5px;
+    line-height: 100%;
+    white-space: nowrap;
+    justify-content: left;
+  }
+
+  .benefitItem svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Updated styles for mobile responsiveness */
+.mobile {
+  margin: 0;
+  padding: 0;
+}
+
+.mobile .navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  color: var(--black);
+  z-index: 2;
+  padding: 5px 15px;
+  /* Ensure the navbar stays on top of the blurred background */
+}
+
+.mobile .navbar-home a {
+  color: var(--black);
+}
+
+.mobile .navbar-items {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.mobile .navbar-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.mobile .navbar-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.mobile .navbar-head h2 {
+  padding-top: 15px;
+  font-family: 'Laila', sans-serif;
+}
+
+.mobile .navbar .menu-icon::after {
+  content: "MENU";
+  font-size: 10px;
+  font-weight: bold;
+  position: absolute;
+  bottom: 10px;
+  left: 18px;
+}
+
+.mobile .navbar .navbar-home::after {
+  content: "HOME";
+  font-size: 10px;
+  font-weight: bold;
+  position: absolute;
+  bottom: 10px;
+  right: 16px;
+}
+
+/* Updated styles for mobile responsiveness */
+@media (max-width: 768px) {
+
+  .mobile .navbar-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    height: 100vh;
+    background-color: white;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  }
+
+  .mobile .navbar-items.active {
+    opacity: 1;
+    pointer-events: auto;
+    height: 100vh;
+    width: 60%;
+    transform: translateX(0);
+  }
+
+  .mobile .navbar-item {
+    padding: 10px;
+    color: var(--black);
+
+  }
+
+  .intro .visible .logo p {
+    font-size: 12px;
+  }
+
+  .mobile .navbar-toggle {
+    display: block;
+  }
+
+  .mobile .navbar-head h2 {
+    font-size: 30px;
+  }
+}
+
+.mobile .navbar .navbar-items a {
+  text-decoration: none;
+}
+
+
+/* HOME SECTION  */
+
+
+/* VISIBLE  */
+.intro,
+.offer-container,
+.about-container,
+.brand-container,
+.service-container,
+.mission-container {
+  padding: 55px 70px;
+}
+
+.intro .visible .read-button {
+  display: flex;
+  width: 100%;
+}
+
+.intro .logo {
+  /* padding-top: 20px; */
+  display: inline-block;
+  text-align: center;
+
+  /* color: white; */
+}
+
+.intro .logo img,
+h2 {
+  margin-bottom: 20px;
+}
+
+.intro .logo p {
+  margin-bottom: 40px;
+}
+
+.intro .visible .read-button .btn {
+  width: 50%;
+  margin-bottom: 20px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.intro .visible .intro-content {
+  margin-top: 20px;
+}
+
+.intro .visible h2,
+.about-container .about h2,
+.offer-container .offer h2,
+.service-panel h2,
+.mission h2 {
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.intro .visible p,
+.home-about p,
+.mission p {
+  text-align: justify;
+  font-size: 18px;
+  font-family: 'Noto Serif Khitan Small Script', sans-serif;
+}
+
+.intro .visible ul {
+  list-style: none;
+  font-size: 20px;
+}
+
+.intro .visible .intro-icon {
+  font-size: 30px;
+  margin-right: 20px;
+  color: var(--gold40);
+}
+
+@media (max-width: 480px) {
+  .offer-container {
+    margin: 10px 20px;
+    padding: 30px 10px;
+  }
+
+  .intro,
+  .offer-container,
+  .about-container,
+  .service-container,
+  .mission-container {
+    padding: 40px 30px;
+  }
+
+  .brand-container{
+    padding: 40px 10px;
+  }
+  .intro .visible .read-button .btn {
+    width: 100%;
+  }
+
+  .intro .visible h2,
+  .about-container .about h2,
+  .offer-container .offer h2,
+  .service-panel h2,
+  .mission h2 {
+    font-size: 36px;
+  }
+}
+
+/* OFFER */
+
+/* .offer-container {
+  margin: 25px 40px;
+  padding: 30px;
+} */
+
+.offer-container .offer {
+  margin-bottom: 30px;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+
+
+@media (min-width:800px) {
+  .offer-container .offer .offer-mobile{
+    display: none;
+  }
+
+  .offer-container .offer .offer-mobile .card{
+    width: 50%;
+  }
+}
+@media (max-width:800px) {
+  .offer-container .offer .offer-laptop{
+    display: none;
+  }
+}
+
+/* ABOUT COLOURX ADVERTISERS */
+.service-container,
+.about-container {
+  /* text-align: center; */
+  background-color: var(--dark-gray);
+}
+
+.about-container .about{
+   padding: 20px 15px;
+}
+
+.about-container .about span {
+  padding: 0 10px;
+  font-weight: bolder;
+  border-radius: 7px;
+  background-color: var(--gold);
+  white-space: nowrap;
+  font-family: 'Laila', sans-serif;
+}
+/* MISSION */
+.mission h2{
+  position: relative;
+  background-color: var(--gold);
+  width: 60%;
+  font-family: 'Laila', sans-serif;
+  border-radius: 10px;
+  padding: 10px 6px 6px;
+}
+.mission h2::after{
+  content: "";
+  position: absolute;
+  bottom: 6px;
+  left: 6px;
+  height: 2px;
+  width: 40%;
+  background-color: var(--black);
+}
+.mission .mission-content{
+  padding: 10px 30px ;
+}
+@media (max-width: 480px){
+  .mission h2{
+    width: 75%;
+  }
+}
+/* .mission ,.mission-content .mission-icon{
+  padding-left: 10px;
+} */
+/* .home-about p{
+  text-align: justify;
+  font-size: 18px;
+  font-family: 'Noto Serif Khitan Small Script', sans-serif;
+} */
+
+/* Benefits */
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 600px;
+  /* Adjust the maximum width as per your preference */
+  padding: 20px;
+}
+
+.carousel-container h2 {
+  margin-bottom: 20px;
+}
+
+.carousel .control-dots {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 10px;
+  /* Adjust the position as per your preference */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+/* CSS Styling for the Card */
+.card {
+  width: 100%;
+
+  padding: 20px;
+  margin-bottom: 20px;
+  color: white;
+  background-color: var(--black);
+  /* text-align: justify; */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+   height: 40vh; 
+}
+
+@media (max-width: 500px) {
+  .card{
+    height: 63vh;
+  }
+}
+
+
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.card h3 {
+  margin-top: 10px;
+  color: white;
+}
+
+.card p {
+  color: white;
+  white-space: pre-line; 
+  max-width: 100%; 
+}
+
+
+/* Brand */
+
+.why {
+  padding: 90px 0;
+}
+
+.why .whyInner {
+  text-align: left;
+}
+
+.why .whyInner .whyHead {
+  width: 100%;
+}
+
+.why .whyInner .whyHead .whyTitle {
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 140%;
+  margin: 0;
+}
+
+.whyTitle span {
+  padding: 0 25px;
+  border-radius: 12px;
+  margin-right: 5px;
+}
+
+.whyTitle span:first-of-type {
+  background-color: var(--black);
+  white-space: nowrap;
+  color: var(--gold);
+  padding-bottom: 6px;
+}
+
+.whyTitle span:last-of-type {
+  background-color: var(--gold);
+  white-space: nowrap;
+  font-family: 'Laila', sans-serif;
+  padding-right: 16px;
+}
+
+@media (max-width: 1024px) {
+  .why .whyInner .whyHead .whyTitle,
+  .uses .usesInner .usesHead .usesTitle {
+    font-size: 45px;
+  }
+}
+
+.why .whyInner .whyList {
+  margin-top: 20px;
+}
+
+.why .whyInner .whyList .whyListItem {
+  display: grid;
+  grid-template-columns: 32px auto;
+  column-gap: 12px;
+  margin-bottom: 24px;
+}
+
+.why .whyInner .whyList .whyListItem:last-of-type {
+  margin-bottom: 0;
+}
+
+.why .whyInner .whyList .whyListItem .whyListItemIcon {
+  margin-top: 5px;
+}
+
+.why .whyInner .whyList .whyListItem .whyListItemTitle {
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 160%;
+}
+
+.why .whyInner .whyList .whyListItem .brand-icon {
+  display: block;
+  color: var(--gold);
+  height: auto;
+  width: 100%;
+}
+
+.why .whyInner .whyList .whyListItem .whyListItemBody {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 160%;
+  grid-column: 2/3;
+}
+
+@media (max-width: 800px) {
+  .why {
+    padding: 0 0px 48px;
+  }
+  .why .whyInner .whyHead{
+    padding: 0 35px;
+  }
+  .why .whyInner .whyHead .whyTitle {
+    font-size: 32px;
+  }
+
+  .why .whyInner .whyList .whyListItem .whyListItemIcon {
+    margin-top: 2px;
+  }
+
+  .why .whyInner .whyList .whyListItem .whyListItemTitle {
+    font-size: 20px;
+    line-height: 140%;
+  }
+
+  .why .whyInner .whyList .whyListItem .whyListItemBody {
+    font-size: 16px;
+    line-height: 160%;
+    padding-right: 30px;
+  }
+
+  .why .whyInner .whyList .whyListItem .whyListItemBody br {
+    display: none;
+  }
+}
+
+/* Service panel Button */
+.service-panel a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+.service-panel .panel-button {
+  display: flex;
+  justify-content: space-between;
+  /* width: 80%; */
+  background-color: var(--gold);
+  margin: 10px 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  border-radius: 10px;
+}
+
+
+/* FOOTER SECTION  */
+footer {
+  background-color: var(--black);
+  color: white;
+  text-align: center;
+}
+
+footer .container {
+  padding: 20px 40px;
+}
+
+footer .container h2 {
+  color: var(--gold);
+}
+
+.container .footer-logo .bottomnav a,
+.container .footer-contact a,
+.container .footer-connect a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 5px;
+  padding: 8px;
+  font-size: 15px;
+}
+
+.footer-container .footer-contact {
+  margin: 16px;
+  padding: 20px;
+  display: block;
+
+}
+
+@media (min-width: 769px) {
+  .mobile {
+    display: none;
+  }
+  /* header .logo h2{
+    display: none;
+  } */
+}
+
+@media (max-width: 768px) {
+  .container-fluid .laptop {
+    display: none;
+  }
+
+  /* header .logo h2{
+    visibility: visible;
+  } */
+  .mobile {
+    visibility: visible;
+  }
+}
+
+@media (max-width: 575px) {
+  .container .footer-connect .social-icons {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width:520px) {
+  .why .whyInner .whyHead{
+    padding: 0 22px;
+  }
+}
+@media (max-width:495px) {
+  .why .whyInner .whyHead{
+    padding: 0 16px;
+  }
+}
+@media (max-width:480px) {
+  .why .whyInner .whyHead{
+    padding: 0 99px 0 30px;
+  }
+}
+@media (max-width:459px) {
+  .why .whyInner .whyHead{
+    padding-left: 20px;
+    padding-right: 80px;
+  }
+}
+@media (max-width:430px) {
+  .why .whyInner .whyHead{
+    padding-left: 20px;
+    padding-right: 52px;
+  }
+}
+@media (max-width:404px) {
+  .why .whyInner .whyHead{
+    padding-left: 20px;
+    padding-right: 40px;
+  }
+}
+@media (max-width:375px) {
+  .why .whyInner .whyHead{
+    padding: 0 20px;
+  }
+}
+
+/* Add your CSS styles for the Read More button in mobile view */
+.read-more-link {
+  /* Text color */  
+  cursor: pointer; /* Cursor style */
+}
+
+
+
+/* All Services */
+
+.flex-content .advantages .advantages-slider .slide{
+  /* background: var(--black); */
+  padding: 20px;
+  /* color: white; */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Add a shadow for a visual separation */
+  transition: transform 0.5s ease;
+}
+.flex-header .head h2{
+  font-size: 45px;
+  font-weight: bolder;
+}
+/* Services use */
+
+.uses {
+  padding: 90px 0;
+}
+
+.uses .usesInner {
+  text-align: left;
+}
+
+.uses .usesInner .usesHead {
+  width: 100%;
+}
+
+.uses .usesInner .usesHead .usesTitle {
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 140%;
+  margin: 0;
+}
+
+.usesTitle span {
+  padding: 0 25px;
+  border-radius: 12px;
+  margin-right: 5px;
+}
+
+.usesTitle span:first-of-type {
+  background-color: var(--black);
+  white-space: nowrap;
+  color: var(--gold);
+  padding-bottom: 6px;
+}
+
+.usesTitle span:last-of-type {
+  background-color: var(--gold);
+  white-space: nowrap;
+  font-family: 'Laila', sans-serif;
+  padding-right: 16px;
+}
+.uses .usesInner  .usesListItemTitle {
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 160%;
+}
+.uses .usesInner .usesBody{
+  margin-top: 20px;
+}
+@media (max-width: 1024px) {
+  .uses .usesInner .usesHead .usesTitle {
+    font-size: 45px;
+  }
+}
+
+.uses .usesInner .usesListItemBody {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 160%;
+  grid-column: 2/3;
+}
+
+@media (max-width: 800px) {
+  .uses {
+    padding: 0 0px 48px;
+  }
+  .uses .usesInner .usesHead{
+    padding: 0 35px;
+  }
+  .flex-header .head h2,
+  .uses .usesInner .usesHead .usesTitle {
+    font-size: 32px;
+  }
+  .uses .usesInner .usesListItemBody {
+    font-size: 16px;
+    line-height: 160%;
+  }
+  .uses .usesInner .usesListItemTitle {
+    font-size: 20px;
+    line-height: 140%;
+  }
+  .flex-header .head-content{
+    padding: 0 45px;
+  }
+  .uses .usesInner .usesBody p{
+    padding-right: 30px;
+  }
+}
+
+.service-img{
+  height: 50vh ;
+  width: 100% ; 
+}
+@media (max-width: 500px){
+  .service-img{
+    height: 30vh;
+  }
+}
